@@ -1,0 +1,124 @@
+﻿
+@{
+    Layout = "_DatingLayout"; // Assuming no layout for simplicity
+
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+
+
+    <style>
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Corben', Georgia, Times, serif;
+        }
+
+        h1 {
+            height: 50px; 
+        }
+
+        p, div {
+            font-family: 'Nobile', Helvetica, Arial, sans-serif;
+        }
+
+        p {
+            margin-bottom: 0; 
+        }
+
+        body {
+            background-color: lightpink;
+            margin: 0;
+            padding: 0;
+        }
+
+        .center-container {
+            justify-content: center;
+            align-items: center;
+            display: flex; 
+        }
+
+        .navbar-custom {
+            background-color: antiquewhite;
+            width: auto;
+            margin: 0;
+            padding: 0;
+        }
+
+        .item-container {
+            width: 350px;
+            display: flex;
+            flex-direction: column;
+            border-style: groove;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .vertical-center {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="center-container">
+        <form id="form1">
+           @*  <div class="d-flex">
+                <div class="d-flex flex-column w-50 pr-3">
+                    <h6 class="text-uppercase text-left mb-2">Commitment</h6>
+                    <select id="ddlCommitment" class="p-2 pl-3 mb-3 list-group">
+                        <option value="Any" class="list-group-item">Any</option>
+                        <option value="Friends" class="list-group-item">Friends</option>
+                        <option value="Relationship" class="list-group-item">Relationship</option>
+                        <option value="Marriage" class="list-group-item">Marriage</option>
+                    </select>
+                    <h6 class="text-uppercase text-left mb-2">Movie Type</h6>
+                    <select id="ddlMovie" class="p-2 pl-3 mb-3 list-group">
+                        <option value="Any" class="list-group-item">Any</option>
+                        <option value="Action" class="list-group-item">Action</option>
+                        <option value="Comedy" class="list-group-item">Comedy</option>
+                        <option value="Drama" class="list-group-item">Drama</option>
+                        <option value="Fantasy" class="list-group-item">Fantasy</option>
+                        <option value="Thriller" class="list-group-item">Thriller</option>
+                    </select>
+                </div>
+
+                <div class="d-flex flex-column w-50 pr-3">
+                    <h6 class="text-uppercase mb-2">Book Type</h6>
+                    <select id="ddlBook" class="p-2 pl-3 mb-3 list-group">
+                        <option value="Any" class="list-group-item">Any</option>
+                        <option value="Adventure" class="list-group-item">Adventure</option>
+                        <option value="Crime" class="list-group-item">Crime</option>
+                        <option value="Fantasy" class="list-group-item">Fantasy</option>
+                        <option value="Mystery" class="list-group-item">Mystery</option>
+                        <option value="Romance" class="list-group-item">Romance</option>
+                    </select>
+
+                    <h6 class="text-uppercase mb-2">Food Type</h6>
+                    <select id="ddlFood" class="p-2 pl-3 mb-3 list-group">
+                        <option value="Any" class="list-group-item">Any</option>
+                        <option value="Mexican" class="list-group-item">Mexican</option>
+                        <option value="Chinese" class="list-group-item">Chinese</option>
+                        <option value="Italian" class="list-group-item">Italian</option>
+                        <option value="Japanese" class="list-group-item">Japanese</option>
+                        <option value="American" class="list-group-item">American</option>
+                        <option value="Greek" class="list-group-item">Greek</option>
+                        <option value="Indian" class="list-group-item">Indian</option>
+                        <option value="Thai" class="list-group-item">Thai</option>
+                    </select>
+                </div>
+            </div> *@
+
+            <div class="row justify-content-center mt-3">
+                <button id="btnModify" class="btn btn-sm btn-primary" type="submit">Modify Search</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = DatingSiteTeamProject
+build_property.RootNamespace = DatingSiteTeamProject
+build_property.ProjectDir = C:\Users\tug41\Desktop\ServerSide2024\Projects\Project4\DatingSiteTeamProject\DatingSiteTeamProject\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\tug41\Desktop\ServerSide2024\Projects\Project4\DatingSiteTeamProject\DatingSiteTeamProject
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/tug41/Desktop/ServerSide2024/Projects/Project4/DatingSiteTeamProject/DatingSiteTeamProject/Views/Account/AccountDetail_View.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBY2NvdW50RGV0YWlsX1ZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tug41/Desktop/ServerSide2024/Projects/Project4/DatingSiteTeamProject/DatingSiteTeamProject/Views/Authentication/Authentication_View.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aGVudGljYXRpb25cQXV0aGVudGljYXRpb25fVmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tug41/Desktop/ServerSide2024/Projects/Project4/DatingSiteTeamProject/DatingSiteTeamProject/Views/Authentication/VerifyCode_View.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aGVudGljYXRpb25cVmVyaWZ5Q29kZV9WaWV3LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tug41/Desktop/ServerSide2024/Projects/Project4/DatingSiteTeamProject/DatingSiteTeamProject/Views/Date/DateView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGF0ZVxEYXRlVmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tug41/Desktop/ServerSide2024/Projects/Project4/DatingSiteTeamProject/DatingSiteTeamProject/Views/Home/Home_View.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxIb21lX1ZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tug41/Desktop/ServerSide2024/Projects/Project4/DatingSiteTeamProject/DatingSiteTeamProject/Views/Likes/LikesView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlrZXNcTGlrZXNWaWV3LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tug41/Desktop/ServerSide2024/Projects/Project4/DatingSiteTeamProject/DatingSiteTeamProject/Views/Login/Login_View.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cTG9naW5fVmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tug41/Desktop/ServerSide2024/Projects/Project4/DatingSiteTeamProject/DatingSiteTeamProject/Views/Match/MatchView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF0Y2hcTWF0Y2hWaWV3LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tug41/Desktop/ServerSide2024/Projects/Project4/DatingSiteTeamProject/DatingSiteTeamProject/Views/Profile/InsertProfile_View.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZVxJbnNlcnRQcm9maWxlX1ZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tug41/Desktop/ServerSide2024/Projects/Project4/DatingSiteTeamProject/DatingSiteTeamProject/Views/Profile/ProfileHomeView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZVxQcm9maWxlSG9tZVZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tug41/Desktop/ServerSide2024/Projects/Project4/DatingSiteTeamProject/DatingSiteTeamProject/Views/Profile/UpdateProfile_View.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZVxVcGRhdGVQcm9maWxlX1ZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tug41/Desktop/ServerSide2024/Projects/Project4/DatingSiteTeamProject/DatingSiteTeamProject/Views/Profile/ViewProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlsZVxWaWV3UHJvZmlsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tug41/Desktop/ServerSide2024/Projects/Project4/DatingSiteTeamProject/DatingSiteTeamProject/Views/Registration/Registration_View.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVnaXN0cmF0aW9uXFJlZ2lzdHJhdGlvbl9WaWV3LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tug41/Desktop/ServerSide2024/Projects/Project4/DatingSiteTeamProject/DatingSiteTeamProject/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tug41/Desktop/ServerSide2024/Projects/Project4/DatingSiteTeamProject/DatingSiteTeamProject/Views/Shared/_DatingLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9EYXRpbmdMYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tug41/Desktop/ServerSide2024/Projects/Project4/DatingSiteTeamProject/DatingSiteTeamProject/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tug41/Desktop/ServerSide2024/Projects/Project4/DatingSiteTeamProject/DatingSiteTeamProject/Views/UpdateProfile/UpdateProfile_View.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXBkYXRlUHJvZmlsZVxVcGRhdGVQcm9maWxlX1ZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tug41/Desktop/ServerSide2024/Projects/Project4/DatingSiteTeamProject/DatingSiteTeamProject/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tug41/Desktop/ServerSide2024/Projects/Project4/DatingSiteTeamProject/DatingSiteTeamProject/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tug41/Desktop/ServerSide2024/Projects/Project4/DatingSiteTeamProject/DatingSiteTeamProject/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-412hk8esyy

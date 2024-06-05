@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="http://fonts.googleapis.com/css?family=Corben:bold" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Nobile" rel="stylesheet" type="text/css" />
+    <style>
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Corben', Georgia, Times, serif;
+        }
+
+        h1 {
+            height: 50px; /* Adjust this value as needed */
+        }
+
+        p, div {
+            font-family: 'Nobile', Helvetica, Arial, sans-serif;
+        }
+
+        p {
+            margin-bottom: 0; /* Reduce bottom margin */
+        }
+
+        body {
+            background-color: lightpink;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar-custom {
+            background-color: antiquewhite;
+        }
+
+        .profile-container {
+            border-style: groove;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px; /* Add margin to separate profiles */
+        }
+
+        .profile-image {
+            max-width: 100%;
+            height: auto;
+        }
+
+       
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
+        <div class="navbar-brand" href="#">
+            <img src="~/img/heart.png" class="me-2" height="50" alt="LoveQuest" loading="lazy" />
+        </div>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarToggler">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Profile" asp-action="ProfileHomeView">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Likes" asp-action="LikesView">Likes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Match" asp-action="MatchView">Matches</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Date" asp-action="DateView">Dates</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="UpdateProfile" asp-action="UpdateProfile_View">Edit Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Account" asp-action="AccountDetail_View">Account</a>
+                </li>
+            </ul>
+
+            <div class="form-inline my-2 my-lg-0">
+                <a class="nav-link" asp-controller="Login" asp-action="Logout">Log Out</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+
+    <footer class="text-center text-lg-start navbar-custom mt-5">
+        <div class="container-fluid">
+            <div class="p-3">
+                © 2024 LoveQuest: All rights reserved.
+            </div>
+        </div>
+    </footer>
+    @await RenderSectionAsync("Scripts", required: false)
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>

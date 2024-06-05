@@ -1,0 +1,142 @@
+﻿@model List<DatingSiteTeamProject.Models.AuthenicationModel>
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = "_DatingLayout"; // Assuming no layout for simplicity
+    int likerId =  int.Parse(ViewBag.UserId);
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Find Your Match</title>
+    <link rel="stylesheet" href="~/css/imageOverlay.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: lightpink;
+        }
+        .image {
+            width: 200px;
+            height: 200px;
+            display: block;
+            margin: 0 auto;
+        }
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            background-color: #FFDAB9;
+        }
+
+        .sidebar {
+            border: 2px solid black;
+            height: 80vh; 
+            padding: 10px; 
+            background-color: #f8f9fa;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="sidebar-sticky bg-light sidebar">
+                    <h4 class="px-3">Search Filters</h4>
+                    <form asp-controller="Profile" asp-action="SearchFilter" method="Post">
+                        <div class="mb-3">
+                            <h6>Commitment</h6>
+                            <div>
+                                <input type="checkbox" id="commitmentFriends" name="commitmentTypes" value="Friends">
+                                <label for="commitmentFriends">Friends</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="commitmentRelationship" name="commitmentTypes" value="Relationship">
+                                <label for="commitmentRelationship">Relationship</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="commitmentMarriage" name="commitmentTypes" value="Marriage">
+                                <label for="commitmentMarriage">Marriage</label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="ddlState" class="form-label">State</label>
+                            <select id="ddlState" name="State" class="form-select">
+@*                                 <option value="Any">Any</option>
+ *@
+                                @foreach (var state in ViewBag.States)
+                                {
+                                    <option value="@state.Value">@state.Text</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="txtCity" class="form-label">City</label>
+                            <input type="text" id="txtCity" name="City" class="form-control" placeholder="Enter city name" value="@ViewBag.City">
+                        </div>
+                        <div class="mb-3">
+                            <label for="txtOccupation" class="form-label">Occupation</label>
+                            <input type="text" id="txtOccupation" name="Occupation" class="form-control" placeholder="Enter Occupation" value="@ViewBag.Occupation">
+                        </div>
+                        <div class="mb-3">
+                            <label for="ageLower" class="form-label">Age Range</label>
+                            <div class="d-flex align-items-center">
+                                <input type="text" id="ageLower" name="lowerAge" class="form-control" placeholder="Min Age" style="width: 100px;" value="@ViewBag.LowerAge" />
+                                <span class="mx-2">to</span>
+                                <input type="text" id="ageUpper" name="upperAge" class="form-control" placeholder="Max Age" style="width: 100px;" value="@ViewBag.UpperAge" />
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Apply Filters</button>
+                    </form>
+                    <form asp-controller="Profile" asp-action="ProfileHomeView" method="get">
+                        <button type="submit" class="btn btn-danger">Reset Filters</button>
+                    </form>
+                </div>
+            </div>
+
+            <main class="col-md-9 ms-sm-auto col-lg-9 px-md-4">
+                <h1 class="h2">Search Results</h1>
+                <div class="row">
+                    @foreach (var userProfile in Model)
+                    {
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card">
+                                <img src="@userProfile.Profile.PhotoUrl" class="card-img-top image" alt="Profile Image">
+                                <div class="card-body">
+                                    <h5 class="card-title">@userProfile.User.Name</h5>
+                                    <p class="card-text">@userProfile.Profile.Description</p>
+                                    <ul class="list-unstyled">
+                                        <ul class="list-unstyled">
+                                            <li><i class="bi bi-geo-alt-fill"></i> @userProfile.Profile.City, @userProfile.Profile.State</li>
+                                            <li><i class="bi bi-person-fill"></i> Age: @userProfile.Profile.Age</li>
+                                            <li><i class="bi bi-heart-fill"></i> Looking for: @userProfile.Profile.Commitment</li>
+                                        </ul>
+                                        <div class="d-flex justify-content-around">
+                                            <form asp-controller="Likes" asp-action="LikeUser" method="Post">
+                                                <input type="hidden" name="likerId" value="@likerId" />
+                                                <input type="hidden" name="likeId" value="@userProfile.User.Id" />
+                                                <button class="btn btn-danger" name="btnLike" type="submit">
+                                                    Like <i class="bi bi-heart"></i>
+                                                </button>
+                                            </form>
+                                            <form asp-controller="Profile" asp-action="ViewProfile" method="get">
+                                                <input type="hidden" name="profileId" value="@userProfile.User.Id" />
+                                                <button class="btn btn-secondary" type="submit">
+                                                    View Profile <i class="bi bi-eye"></i>
+                                                </button>
+                                            </form>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

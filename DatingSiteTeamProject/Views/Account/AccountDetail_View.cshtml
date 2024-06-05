@@ -1,0 +1,76 @@
+﻿ @model DatingSiteTeamProject.Models.UserModel
+ @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = "_DatingLayout"; // Assuming no layout for simplicity
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User details</title>
+    <link rel="stylesheet" href="~/css/imageOverlay.css" />
+
+    <style>
+        /* Your CSS styles */
+        body {
+            background-color: lightpink;
+        }
+
+        .center-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .navbar-custom {
+            background-color: antiquewhite;
+        }
+
+        h6 {
+            margin: 5% 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="center-container">
+        <form id="AccountForm" asp-controller="Account" asp-action="UpdateUserAccount" method="POST" enctype="multipart/form-data">
+            <h1>Account Details</h1>
+            <div class="form-group">
+                <label for="Name">Full Name:</label>
+                <input asp-for="Name" id="Name" type="text" class="form-control form-control-lg" placeholder="Name" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="Email">Email:</label>
+                <input asp-for="Email" id="Email" type="text" class="form-control form-control-lg" placeholder="Email" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="Username">Username:</label>
+                <input asp-for="Username" id="Username" type="text" class="form-control form-control-lg" placeholder="Username" />
+                <span asp-validation-for="Username" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="Password">Password:</label>
+                <input asp-for="Password" id="Password" type="text" class="form-control form-control-lg" placeholder="Password" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            @if (ViewData["ValidationMessage"] != null)
+            {
+                <div class="alert alert-danger">@ViewData["ValidationMessage"].ToString()</div>
+            }
+            <div class="d-flex justify-content-center">
+                <div class="form-group">
+                    <button id="btnEditUser" type="submit" class="btn btn-warning btn-block btn-lg gradient-custom-4 text-body">Update User</button>
+                </div>
+            </div>
+        </form>
+        @* 
+            Have validation like in the login model
+            and then as well as message that this ussername already exist
+        *@
+    </div>
+</body>
+</html>

@@ -1,0 +1,107 @@
+﻿ @model DatingSiteTeamProject.Models.UserModel
+ @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    Layout = null;
+   
+
+
+    ViewData["Title"] = "View";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Love Today</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="http://fonts.googleapis.com/css?family=Corben:bold" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Nobile" rel="stylesheet" type="text/css" />
+
+    <style>
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Corben', Georgia, Times, serif;
+        }
+
+        p, div {
+            font-family: 'Nobile', Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: lightpink;
+            margin: 0;
+            padding: 0;
+        }
+
+        img{
+            border-style: solid;
+            color: white;
+        }
+        .navbar-custom {
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    <br />
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <img src="~/img/HeartQuestLogo.webp" class="img-fluid" alt="HearQuestLogo">
+            </div>
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body p-5">
+                        <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+
+                        <form asp-controller="Registration" asp-action="CreateUserAccount" method="POST">
+                            <div class="form-group">
+                                <input asp-for="Name" type="text" class="form-control form-control-lg" placeholder="Your Name" />
+                                <span asp-validation-for="Name" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <input asp-for="Email" type="email" class="form-control form-control-lg" placeholder="Your Email"/>
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <input asp-for="Username" type="text" class="form-control form-control-lg" placeholder="Your User Name">
+                                <span asp-validation-for="Username" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <input asp-for="Password" type="password" class="form-control form-control-lg" placeholder="Password">
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                            </div>
+                            @if (ViewData["ErrorMessage"] != null)
+                            {
+                                <div class="alert alert-danger">
+                                    @ViewData["ErrorMessage"].ToString()
+                                </div>
+                            }
+                            <div class="d-flex justify-content-center">
+                                    <div class="form-group">
+                                        <button id="btnRegister" type="submit" class="btn btn-warning btn-block btn-lg">Register</button>
+                                    </div>
+                            </div>
+                        </form>
+
+                        <p class="text-center text-muted mt-5 mb-0">Have an account already? <a asp-controller="Login" asp-action="Login_View" class="fw-bold text-body"><u>Login here</u></a></p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start" style="margin-top: 350px;">
+        <div class="text-center p-3 navbar-custom">
+            © 2024 LoveQuest: All rights reserved.
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"> </script>
+</body>
+</html>
+

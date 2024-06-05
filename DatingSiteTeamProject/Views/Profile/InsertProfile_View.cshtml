@@ -1,0 +1,339 @@
+﻿ @model DatingSiteTeamProject.Models.ProfileModel
+ @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = "_DatingLayout"; // Assuming no layout for simplicity
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Profile</title>
+    <link rel="stylesheet" href="~/css/imageOverlay.css" />
+
+    <style>
+        /* Your CSS styles */
+        body {
+            background-color: lightpink;
+        }
+
+        .center-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .navbar-custom {
+            background-color: antiquewhite;
+        }
+
+        h6{
+            margin: 5% 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="center-container">
+        <form id="imageUploadForm" asp-controller="Profile" asp-action="UploadImage" method="POST" enctype="multipart/form-data">
+            <h2 class="text-uppercase text-center mb-2">Photo Gallery</h2>
+            <div class="form-group">
+                <label for="ImageTitle">Title:</label>
+@*                 <input type="text" class="form-control form-control-lg" id="ImageTitle" name="ImageTitle" placeholder="Enter image title">
+ *@
+                <input asp-for="ImageTitle" id="ImageTitle" type="text" class="form-control form-control-lg" placeholder="Enter image title" />
+                <span asp-validation-for="ImageTitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="ImageDescription">Description:</label>
+@*                 <textarea class="form-control form-control-lg" id="ImageDescription" name="ImageDescription" placeholder="Enter image description"></textarea>
+ *@
+                <input asp-for="ImageDescription" id="ImageDescription" type="text" class="form-control form-control-lg" placeholder="Enter image description" />
+                <span asp-validation-for="ImageDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="ImageFile">Select Image:</label>
+                <input type="file" asp-for="ImageFile" accept="image/*" /><br />
+                <span asp-validation-for="ImageFile" class="text-danger"></span>
+            </div>
+            <div class="button-group">
+                <button id="AddImage" type="submit" class="btn btn-primary">Upload Image</button>
+                <button id="viewImagesButton" type="button" class="btn btn-secondary">View All Images</button>
+            </div>
+        </form>
+    </div>
+
+
+    <div class="center-container">
+        <form id="profileUpdateForm" asp-controller="Profile" asp-action="InsertUserProfile" method="POST" enctype="multipart/form-data">
+@*             <h2 class="text-uppercase text-center mb-2">Photo Gallery</h2>
+            <div class="form-group">
+                <input type="file" asp-for="ImageFile" accept="image/*" /><br />
+                <button id="AddImage" type="submit">Upload Image</button>
+
+            </div> *@
+            
+            <h2 class="text-uppercase text-center mb-2">Edit Your Profile</h2>
+
+            <div class="form-group">
+                <input asp-for="Age" id="Age" type="text" class="form-control form-control-lg" placeholder="Age" />
+                <span asp-validation-for="Age" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="Height" id="Height" type="text" class="form-control form-control-lg" placeholder="Height (5.6 = 5'6)" />
+                <span asp-validation-for="Height" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="Weight" id="Weight" type="text" class="form-control form-control-lg" placeholder="Weight" />
+                <span asp-validation-for="Weight" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input asp-for="City" id="City" type="text" class="form-control form-control-lg" placeholder="City" />
+                <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input asp-for="State" id="State" type="text" class="form-control form-control-lg" placeholder="State Initials (FL = Florida)" />
+                <span asp-validation-for="State" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input asp-for="Occupation" id="Occupation" type="text" class="form-control form-control-lg" placeholder="Occupation" />
+                <span asp-validation-for="Occupation" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input asp-for="PhotoUrl" id="PhotoUrl" type="text" class="form-control form-control-lg" placeholder="URL for Picture" />
+                <span asp-validation-for="PhotoUrl" class="text-danger"></span>
+            </div>
+@*             <div class="form-group">
+                <input asp-action="UploadImage" formmethod="post" formenctype="multipart/form-data" type="file" asp-for="ImageFile" accept="image/*" /><br />
+                <button type="submit">Upload Image</button>
+                <button id="viewImagesButton" class="btn btn-secondary">View All Images</button>
+            </div> *@
+
+
+            <div class="d-flex mb-3">
+                <div class="w-50 pr-3">
+                    <h6 class="text-uppercase text-left mb-2">Interests</h6>
+                        <div>
+                            <input name="Interests" id="Technology" type="checkbox" value="Technology"/>
+                                <label for="Technology">Technology</label>
+                        </div>
+                        <div>
+                            <input name="Interests" id="Business" type="checkbox" value="Business" />
+                                <label for="Business">Business</label>
+                        </div>
+                        <div>
+                        <input name="Interests" id="Music" type="checkbox" value="Music" />
+                                <label for="Music">Music</label>
+                        </div>
+                        <div>
+                        <input name="Interests" id="Sports" type="checkbox" value="Sports" />
+                                <label for="Sports">Sports</label>
+                        </div>
+                        <div>
+                        <input name="Interests" id="Cars" type="checkbox" value="Cars" />
+                                <label for="Cars">Cars</label>
+                        </div>
+                        <div>
+                        <input name="Interests" id="Cooking" type="checkbox" value="Cooking" />
+                                <label for="Cooking">Cooking</label>
+                        </div>
+                        <div>
+                        <input name="Interests" id="Dancing" type="checkbox" value="Dancing" />
+                                <label for="Dancing">Dancing</label>
+                        </div>
+                        <div>
+                        <input name="Interests" id="Fashion" type="checkbox" value="Fashion" />
+                                <label for="Fashion">Fashion</label>
+                        </div>
+                        <div class="form-group">
+                            <h6 class="text-uppercase text-left mb-1">Enter Other Interest</h6>
+@*                             <textarea asp-for="OtherInterests" id="OtherInterest" type="text" class="form-control form-control-sm" placeholder="Enter Other Interests"></textarea>
+ *@                            <textarea asp-for="OtherInterests" id="OtherInterest" class="form-control form-control-sm" placeholder="Enter Other Interests"></textarea>
+
+                         </div>
+
+                </div>
+
+            <div class="w-50 pl-3">
+                <div>
+                    <h6 class="text-uppercase text-left mb-2">Favorite Foods</h6>
+                    <select asp-for="Food" class="form-control" id="ddlFood">
+                        <option value="Mexican" class="list-group-item">Mexican</option>
+                        <option value="Chinese" class="list-group-item">Chinese</option>
+                        <option value="Italian" class="list-group-item">Italian</option>
+                        <option value="Japanese" class="list-group-item">Japanese</option>
+                        <option value="American" class="list-group-item">American</option>
+                        <option value="Greek" class="list-group-item">Greek</option>
+                        <option value="Indian" class="list-group-item">Indian</option>
+                        <option value="Thai" class="list-group-item">Thai</option>
+                    </select>
+               </div>
+                <div>
+                    <h6 class="text-uppercase text-left mb-2">Commitment Type</h6>
+                    <select asp-for="Commitment" class="form-control" id="ddlCommitment">
+                        <option value="Friends" class="list-group-item">Friends</option>
+                        <option value="Relationship" class="list-group-item">Relationship</option>
+                        <option value="Marriage" class="list-group-item">Marriage</option>
+                    </select>
+                 </div>
+                 <div>
+                <h6 class="text-uppercase text-left mb-2">Movie Type</h6>
+                    <select asp-for="Movie" class="form-control" id="ddlCommitment">
+                        <option value="Action" class="list-group-item">Action</option>
+                        <option value="Comedy" class="list-group-item">Comedy</option>
+                        <option value="Drama" class="list-group-item">Drama</option>
+                        <option value="Fantasy" class="list-group-item">Fantasy</option>
+                        <option value="Thriller" class="list-group-item">Thriller</option>
+                    </select>
+                 </div>
+                 <div>
+                <h6 class="text-uppercase text-left mb-2">Book Type</h6>
+                <select asp-for="Book" class="form-control" id="ddlBook">
+                    <option value="Adventure" class="list-group-item">Adventure</option>
+                    <option value="Crime" class="list-group-item">Crime</option>
+                    <option value="Fantasy" class="list-group-item">Fantasy</option>
+                    <option value="Mystery" class="list-group-item">Mystery</option>
+                    <option value="Romance" class="list-group-item">Romance</option>
+                </select>
+                    </div>
+            <div>
+                <h6 class="text-uppercase text-left mb-2">Hide Profile</h6>
+                <div>
+                    <input asp-for="Status" type="checkbox"/>
+                    <label for="Status">Hide</label>
+                </div>
+            </div>
+
+             </div>
+            </div>
+
+            <div class="form-group">
+                <h6 class="text-uppercase text-left mb-1">If you were to have one last meal, what would it be?</h6>
+                <textarea asp-for="LastMeal" id="LastMeal" type="text" class="form-control form-control-sm" placeholder="Tacos Al Pastor"> </textarea>
+                <span asp-validation-for="LastMeal" class="text-danger"></span>
+
+                <h6 class="text-uppercase text-left mb-1">What are three places you would love to visit?</h6>
+                <textarea asp-for="DreamDestinations" id="DreamDestinations" type="text" class="form-control form-control-sm" placeholder="Paris, Madrid, Dubai"></textarea>
+                <span asp-validation-for="DreamDestinations" class="text-danger"></span>
+
+                <h6 class="text-uppercase text-left mb-1">List one or more goals you have for the next 5 years</h6>
+                <textarea asp-for="GoalsInFive" id="GoalsInFive" type="text" class="form-control form-control-sm" placeholder="I want to buy a house in 5 years"></textarea>
+                <span asp-validation-for="GoalsInFive" class="text-danger"></span>
+
+                <h6 class="text-uppercase text-left mb-1">What are some deal breakers? Habits or traits you cannot stand.</h6>
+                <textarea asp-for="DealBreakers" id="DealBreakers" type="text" class="form-control form-control-sm" placeholder="Smoking, Financial Irresponsibility, etc."></textarea>
+                <span asp-validation-for="DealBreakers" class="text-danger"></span>
+
+                <h6 class="text-uppercase text-left mb-1">What language or languages do you speak?</h6>
+                <textarea asp-for="Languages" id="Languages" type="text" class="form-control form-control-sm" placeholder="Spanish and English"></textarea>
+                <span asp-validation-for="Languages" class="text-danger"></span>
+
+                <h6 class="text-uppercase text-left mb-1">Describe yourself</h6>
+                <textarea asp-for="Description" id="Description" type="text" class="form-control form-control-lg" placeholder="Describe Yourself In A Sentence"> </textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+
+                <h6 class="text-uppercase text-left mb-1">Favorite Quote</h6>
+                <textarea asp-for="Quote" id="Quote" type="text" class="form-control form-control-lg" placeholder="Favorite Quote"></textarea>
+                <span asp-validation-for="Quote" class="text-danger"></span>
+
+            </div>
+
+             <div class="form-group">
+                 <br/>
+                <h3 class="text-uppercase text-left mb-1">Security Questions</h3>
+
+@*                 <h6 class="text-uppercase text-left mb-1">@Model.Question1</h6>
+                *@  <h6 class="text-uppercase text-left mb-1">WHAT IS THE NAME OF YOUR FIRST PET?</h6>
+
+                <input asp-for="Answer1" id="Answer1" type="text" class="form-control form-control-lg" rows="3" placeholder="Scooby-Doo">
+                <span asp-validation-for="Answer1" class="text-danger"></span>
+
+@*                 <h6 class="text-uppercase text-left mb-1">@Model.Question2</h6>*@
+                <h6 class="text-uppercase text-left mb-1">IN WHICH CITY WERE YOU BORN?</h6>
+                <input asp-for="Answer2" id="Answer2" type="text" class="form-control form-control-lg" placeholder="Philadelphia">
+                <span asp-validation-for="Answer2" class="text-danger"></span>
+
+@*                 <h6 class="text-uppercase text-left mb-1">@Model.Question3</h6>*@                    
+                <h6 class="text-uppercase text-left mb-1">WHAT IS THE MODEL OF YOUR FIRST CAR?</h6>
+                <input asp-for="Answer3" id="Answer3" type="text" class="form-control form-control-lg" placeholder="Honda Civic">
+                <span asp-validation-for="Answer3" class="text-danger"></span>
+
+            </div>
+
+            <div>
+                <label id="lblError"></label>
+            </div>
+
+            <div class="d-flex justify-content-center">
+                <div class="form-group">
+                    <button id="btnEditProfile" type="submit" class="btn btn-warning btn-block btn-lg gradient-custom-4 text-body">Update Profile</button>
+                </div>
+            </div>
+            <br />
+        </form>
+    </div>
+    <form id="imageDelete" asp-controller="Profile" asp-action="DeleteImage" method="POST" enctype="multipart/form-data">
+        <div id="imageOverlay" style="display:none;">
+            <div class="overlayContent">
+                <span class="closeButton">&times;</span>
+                <div class="imageContainer">
+                    <div class="container">
+                        <div class="card border-primary">
+                            <div class="card-header fw-bold border-primary">
+                                Image Gallery
+                            </div>
+                            @if (Model != null && Model.Images != null && Model.Images.Any())
+                            {
+
+                                <div class="row">
+                                    @foreach (var image in Model.Images)
+                                    {
+                                        var base64 = Convert.ToBase64String(image.Data);
+                                        var imgSrc = $"data:{image.Type};base64,{base64}";
+                                        <div class="col-md-3 mt-1 mb-1">
+                                            <div class="alert alert-success">
+
+                                                <img src="@imgSrc" style="width:200px; margin:5px;" />
+                                                <div class="card-body">
+                                                    <h5 class="card-title">@image.ImageTitle</h5>
+                                                    <p class="card-text">@image.ImageDescription</p>
+                                                    <input type="hidden" name="imageTitle" value="@image.ImageTitle" />
+                                                    <input type="hidden" name="imageDescription" value="@image.ImageDescription" />
+
+                                                    <button type="submit" class="btn btn-danger">Delete</button>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            }
+                            else
+                            {
+                                <p>No images.</p>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    @section Scripts {
+        <script>
+            document.getElementById('viewImagesButton').addEventListener('click', function () {
+                document.getElementById('imageOverlay').style.display = 'block';
+            });
+
+            document.querySelector('.closeButton').addEventListener('click', function () {
+                document.getElementById('imageOverlay').style.display = 'none';
+            });
+        </script>
+    }
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
